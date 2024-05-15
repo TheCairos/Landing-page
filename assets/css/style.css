@@ -1,0 +1,302 @@
+/*variables css*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+:root{
+
+    --header-hight: 3rem;
+
+    /*hsl color mode*/
+    --first-color: hsl(var(--hue.color), 64%, 22%);
+    --first-color-second: hsl(var(--hue.color), 64%, 22%);
+    --first-color-alt: hsl(var(--hue.color), 64%, 15%);
+    --title-color: hsl(var(--hue.color), 64%, 18%);
+    --text-color-light: hsl(var(--hue.color), 8%, 60%);
+    --input-color: hsl(var(--hue.color), 24%, 97%);
+    --body-color: hsl(var(--hue.color), 100%, 99%);
+    --white-color: #fff;
+    --scroll-bar-color: hsl(var(--hue.color), 12%, 90%);
+    --scroll-tumb-color: hsl(var(--hue.color), 12%, 75%);
+    
+    /*Font and typography*/
+    --body-font:'Open Sans', sans-serif;
+    --title-font: 'Relaway', sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*Font weight*/
+    --font-medium:500;
+    --font-semi-bold:600;
+    
+    /*Margenes bottom*/
+    --mb-0-25:.25rem;
+    --mb-0-5:.5rem;
+    --mb-0-75:.75rem;
+    --mb-1:1rem;
+    --mb-1-25:1.25rem;
+    --mb-1-5:1.5rem;
+    --mb-2:2rem;
+    --mb-2-5:2.5rem;
+
+    /*Z-Index*/
+    --z-tooltip:10;
+    --z-fixed:100;
+
+    /*Hover Overlay*/
+    --img-transition:.3s;
+    --img-hidden: hidden;
+    --img-scale:scale(1.1);
+
+}
+
+    @media screen and(min-width: 968px) {
+        :root{
+            --biggest-font-size:4rem;
+            --h1-font-size:2.25rem;
+            --h2-font-size:1.75rem;
+            --h3-font-size:1.25rem;
+            --normal-font-size:1rem;
+            --small-font-size:.875rem;
+            --smaller-font-size:.813rem;
+        }
+        
+    }
+
+    /*Variables del dark mode*/
+    body.dark-theme{
+    --first-color-second: hsl(var(--hue.color), 54%, 12%);
+    --title-color: hsl(var(--hue.color), 24%, 98);
+    --text-color: hsl(var(--hue.color), 8%, 75%);
+    --input-color: hsl(var(--hue.color), 29%, 16%);
+    --body-color: hsl(var(--hue.color), 29%, 12%);
+    --scroll-bar-color: hsl(var(--hue.color), 12%, 48%);
+    }
+
+
+    /*Button Dark/Light*/
+
+    nav_dark{
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+        position: absolute;
+        left: 3rem;
+        bottom: 4rem;
+
+    }
+
+    .change-theme, .change-theme-name{
+        color: var(--text-color);
+    }
+
+    .change-theme{
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .change-theme-name{
+        font-size: var(--small-font-size);
+    }
+
+    /*Base*/
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        margin: var(--header-hight) 0 0 0;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        background: var(--body-color);
+        color: var(--text-color);
+    }
+
+    h1, h2, h3{
+        color: var(--title-color);
+        font-weight: var(--font-semi-bold);
+        font-family: var(--title-font);
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    /*Resuable css classes*/
+    .section{
+        padding: 4.5rem 0 2.25rem;
+    }
+
+    .section_title{
+        font-size: var(--h2-font-size);
+        color: var(--title-color);
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: var(--mb-2);
+    }
+
+    .container{
+        max-width: 967px;
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+
+    .grid{
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    /*Header*/
+    .header{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--z-fixed);
+        background-color: transparent;
+    }
+
+    /*Nav*/
+
+    .nav{
+        height: var(--header-hight);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_logo, .nav_toggle{
+        color: var(--white-color);
+    }
+
+    .nav_toggle{
+        font-size: 1.2rem;
+    }
+
+    .nav_menu{
+        position: relative;
+    }
+
+    @media screen and(max-width: 767px){
+        .nav_menu{
+            position: fixed;
+            background-color: var(--body-color);
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100%;
+            box-shadow: -1px 0 4px rgba(15, 55, 63, 0.15);
+            padding: 3rem;
+            transition: .4s;
+        }
+    }
+
+    .nav_list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+    }
+
+    .nav_link{
+        color: var(--text-color-light);
+        font-weight: var(--font-semi-bold);
+        text-transform: uppercase;
+    }
+
+    .nav_link:hover{
+        color: var(--text-color);
+    }
+
+    .nav_close{
+        position: absolute;
+        top: .75rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        color: var(--title-color);
+        cursor: pointer;
+    }
+
+    /*Show Menu*/
+    .show-menu{
+        right: 0;
+    }
+
+    /*Change background header*/
+    .scroll-header{
+        background-color: var(--body-color);
+        box-shadow: 0 0 4px rgba(14, 55, 63, 0.15);
+    }
+
+    .scroll-header .nav_logo, .scroll-header .nav_toggle{
+        color: var(--title-color);
+    }
+
+    /*Home*/
+    .home img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: 83%;
+    }
+
+    .home_container{
+        position: relative;
+        height: calc(100vh var(--header-hight));
+        align-content: center;
+        row-gap: 3rem;
+    }
+
+    .home_data-subtitle,
+    .home_data-title,
+    .home_social-link,
+    .home_info{
+        color: var(--white-color);
+    }
+
+    .home_data-subtitle{
+        display: block;
+        font-weight: var(--font-semi-bold);
+        margin-bottom: var(--mb-0-75);
+    }
+
+    .home_data-title{
+        font-size: var(--font-semi-bold);
+        font-weight: var(--font-medium);
+    }
+
+    .home_social{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .home_social-link{
+        font-size: 1.2rem;
+        width: max-content;
+    }
+
+    .home_info{
+        background-color: var(--first-color);
+        display: flex;
+        padding: 1.5rem 1rem;
+        align-items: center;
+        column-gap: .5rem;
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+        width: 228px;
+    }

@@ -1,0 +1,10 @@
+ul: se utiliza para crear una lista no ordenada
+li: crea cada elementos o cadena de elmentos en la lista
+
+hsl: matiz, saturacion y luminosidad
+
+grid: es una tecnica que permite crear diseños complejos que sean adaptables
+
+scss: es un lenguaje de hoja de estilos en cascada inicialmente diseñado por Hampton Catlin y desarrollado por Natalie Weizenbaum.​​ 
+Después de sus versiones iniciales, Nathan Weizenbaum y Chris Eppstein han continuado extendiendo Sass con SassScript, 
+un lenguaje de script simple, usado en los ficheros Sass.
